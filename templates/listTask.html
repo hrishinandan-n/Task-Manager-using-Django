@@ -9,24 +9,29 @@
     {% extends 'home.html' %}
     {% block content %}
         {% if taskList %}
-            <table>
+            <br><br>
+            <table border="0" cellspacing="10">
                 <thead>
-                    <th>Tasks</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
                     <th>Actions</th>
                 </thead>
                 <tbody>
                     {% for task in taskList %}
-                        <tr>
-                            <td>{{ task.content }}</td>
-                            <td><a href="{% url 'editTask' task.id %}">Edit</a> | <a href="{% url 'deleteTask' task.id %}">Delete</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.due_date }}</td>
+                        <td><a href="{% url 'editTask' task.id %}">Edit</a> | <a href="{% url 'deleteTask' task.id %}">Completed</a>
+                        </td>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            <br><br>
         {% else  %}
-            <p>Noting here so far......... </p>
-            <p>Create New </p>
+            <p>Make this space yours by adding tasks.........</p>
         {% endif %}
     {% endblock %}
 </body>

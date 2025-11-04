@@ -1,8 +1,14 @@
 from django.db import models
 
-# Create your models here.
-class TaskInfo(models.Model):
-    content = models.CharField(max_length=100)
+# Creating your models here. 
 
+# 💭 Creating and defining models. 
+class TaskInfo(models.Model):
+    # 💭 Fields and field types. 
+    title = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    due_date = models.DateField(null=True, blank=True)
+    
+    # 💭 Model methods. 
     def __str__(self):
-        return self.content
+        return f"{self.title} {self.description} {self.due_date} {self.completed}"

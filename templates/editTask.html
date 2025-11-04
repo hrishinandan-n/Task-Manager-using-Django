@@ -9,13 +9,19 @@
     {% extends 'home.html' %}
     
     {% block content %}
-
+        <br>
+        <br>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Edit</button>
+            <table cellspacing="10" cellpadding="0">
+                {{ form.as_table }}
+            </table>
+                <button type="submit">Edit</button>
+            <br>
         </form>
-
+        
+        <br>
+        <br>
     {% endblock %}
 </body>
 </html>

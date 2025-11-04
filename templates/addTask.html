@@ -7,15 +7,21 @@
 </head>
 <body>
     {% extends 'home.html' %}
-    
     {% block content %}
-
+        <h2>Add Task</h2>
+        <br>
+        <br>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <table cellspacing="0" cellpadding="10">
+                    {{ form.as_table }}
+            </table>
+            <br>
             <button type="submit">Add</button>
         </form>
-
+        <br>
+        <br>
+        <br>
     {% endblock %}
 </body>
 </html>
