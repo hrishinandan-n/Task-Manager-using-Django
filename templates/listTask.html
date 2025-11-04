@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    {% extends 'home.html' %}
+    {% block content %}
+        {% if taskList %}
+            <table>
+                <thead>
+                    <th>Tasks</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    {% for task in taskList %}
+                        <tr>
+                            <td>{{ task.content }}</td>
+                            <td><a href="{% url 'editTask' task.id %}">Edit</a> | <a href="{% url 'deleteTask' task.id %}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else  %}
+            <p>Noting here so far......... </p>
+            <p>Create New </p>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>

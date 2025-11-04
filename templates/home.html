@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>    
+    <h1>Home Page</h1>
+    <a href="{% url 'addTask' %}">Add Task</a> <br>
+    <a href="{% url 'listTask' %}">List Task</a> <br>
+    
+    {% block content %}
+    <!-- <p>This content will be overwritten.</p> -->
+    {% endblock %}
+    
+    <a href="{% url 'home' %}">Back</a>
+</body>
+</html>
