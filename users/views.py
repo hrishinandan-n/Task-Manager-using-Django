@@ -29,9 +29,13 @@ def loginUser(request):
         user = authenticate(username=username, password=password)
         if user:
             login(request, user)
+            request.session['username'] = username
+            print(request.session.items())
             return redirect('listTask')
-        
-    return render(request, 'users/loginUser.html' )
+        else:
+           error_msg = "Invalid Credential"  
+                  
+    return render(request, 'users/loginUser.html', {'error':error_msg})
 
 def logoutUser(request):
     if request:

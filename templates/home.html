@@ -11,6 +11,8 @@
     <a href="{% url 'addTask' %}">Add Task</a> <br><br>
     <a href="{% url 'listTask' %}">List Task</a> <br><br>
     
+    <h3>Welcome, {{ request.user.username|upper }} !</h3>
+
     {% block content %}
     <!-- <p>This content will be overwritten.</p> -->
     {% endblock %}
