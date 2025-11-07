@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Creating your models here. 
 
@@ -8,6 +9,7 @@ class TaskInfo(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     due_date = models.DateField(null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tasks', null=True)
     
     # 💭 Model methods. 
     def __str__(self):

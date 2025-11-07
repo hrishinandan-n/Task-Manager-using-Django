@@ -13,7 +13,7 @@ def home(request):
 
 @login_required(login_url='loginUser')
 def listTask(request):
-    taskList = TaskInfo.objects.all()
+    taskList = TaskInfo.objects.filter(user=request.user)
     return render(request, 'listTask.html', {'taskList':taskList})
 
 @login_required(login_url='loginUser')
@@ -23,7 +23,9 @@ def addTask(request):
         # 💭 Step 2: Use the form in a view in views.py
         form = TaskForm(request.POST)
         if form.is_valid():
-            form.save()
+            task = form.save(commit=False)
+            task.user = request.user
+            task.save()
             return redirect('listTask')
     else:
         form = TaskForm()
