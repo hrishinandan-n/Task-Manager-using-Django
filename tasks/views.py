@@ -6,7 +6,6 @@ from .forms import TaskForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-# 💭 Function-based views (FBVs). 
 @login_required(login_url='loginUser')
 def home(request):
     return render(request, 'home.html')
@@ -19,8 +18,6 @@ def listTask(request):
 @login_required(login_url='loginUser')
 def addTask(request):
     if request.POST:
-        # 💭 Step 1: Create a form class in forms.py.
-        # 💭 Step 2: Use the form in a view in views.py
         form = TaskForm(request.POST)
         if form.is_valid():
             task = form.save(commit=False)

@@ -11,6 +11,5 @@ class TaskInfo(models.Model):
     due_date = models.DateField(null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tasks', null=True)
     
-    # 💭 Model methods. 
     def __str__(self):
-        return f"{self.title} {self.description} {self.due_date} {self.completed}"
+        return f"{self.title} {self.description} {self.due_date} {self.user}"

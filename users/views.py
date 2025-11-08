@@ -1,13 +1,10 @@
 from django.shortcuts import render, redirect
 
-# 💭User model 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
-
 # Create your views here.
 
-# 💭 Creating user registration and login forms. 
 def createUser(request):
     user = None
     error_msg = None 
