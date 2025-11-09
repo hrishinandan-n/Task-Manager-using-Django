@@ -1,25 +1,12 @@
-"""
-URL configuration for TaskManager project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
 from django.urls import path
 from users import views
 
+
+app_name = 'users'  # Enables namespaced URLs like 'users:loginUser'
+
+# URL patterns for user authentication and management
 urlpatterns = [
-    path('createUser/', views.createUser, name='createUser'),
-    path('loginUser/', views.loginUser, name='loginUser'),
-    path('logoutUser/', views.logoutUser, name='logoutUser'),
+    path('createUser/', views.createUser, name='createUser'),  # Register a new user
+    path('loginUser/', views.loginUser, name='loginUser'),  # Log in existing user
+    path('logoutUser/', views.logoutUser, name='logoutUser'),  # Log out current user
 ]

@@ -1,28 +1,14 @@
-"""
-URL configuration for TaskManager project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include
 
+# Root URL configuration for TaskManager project
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # Web application endpoints
-    path('tasks/', include('tasks.urls')),
-    path('users/', include('users.urls')),
-    
-    # API endpoints
-    path('api/v1/', include('api.urls'))
+    path('admin/', admin.site.urls),  # Django admin panel
+
+    # App routes
+    path('tasks/', include('tasks.urls')),  # Task management
+    path('users/', include('users.urls')),  # User authentication and registration
+
+    # API routes
+    path('api/v1/', include('api.urls')),  # Versioned API endpoints
 ]
