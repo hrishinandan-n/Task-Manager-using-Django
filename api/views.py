@@ -9,6 +9,8 @@ from django.contrib.auth import authenticate
 from tasks.models import TaskInfo
 from api.serializers import LoginSerializer, RegisterSerializer, TaskInfoSerializer
 
+from drf_spectacular.utils import extend_schema
+
 
 class TaskPagination(PageNumberPagination):
     """Custom pagination with fixed page size."""
@@ -21,12 +23,12 @@ class TaskInfoViewSet(viewsets.ModelViewSet):
     serializer_class = TaskInfoSerializer
     permission_classes = [IsAuthenticated]
     pagination_class = TaskPagination
-
+    
     def perform_create(self, serializer):
         """Attach logged-in user when creating a new task."""
         serializer.save(user=self.request.user)
 
-
+@extend_schema(request=RegisterSerializer, responses={201: RegisterSerializer})
 class RegisterAPI(APIView):
     """Handle user registration."""
     permission_classes = [AllowAny]
@@ -38,7 +40,7 @@ class RegisterAPI(APIView):
         serializer.save()
         return Response({"message": "User created successfully"}, status=status.HTTP_201_CREATED)
 
-
+@extend_schema(request=LoginSerializer, responses={200: LoginSerializer})
 class LoginAPI(APIView):
     """Authenticate user and return auth token."""
     permission_classes = [AllowAny]
