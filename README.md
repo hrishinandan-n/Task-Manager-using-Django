@@ -1,5 +1,8 @@
 # 🚀 TaskManager: Full-Stack Task Management System
 
+![TaskManager Dashboard](User_Interface.png)
+
+
 Built with **Django** and **Django REST Framework**, TaskManager is a production-ready task management solution deployed on **AWS** and **Heroku**. Key highlights:
 
 - **User Authentication & Authorization**: Secure registration, login, and token-based API authentication.
