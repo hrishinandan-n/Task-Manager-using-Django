@@ -25,13 +25,7 @@ SECRET_KEY = 'django-insecure-_sdlgc_h%#_gyp7e7od9y8a880&b4n&53_4&*b5*u2kg3%uhzg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'taskvia.online',
-    'www.taskvia.online',
-    'localhost',
-    '127.0.0.1',
-    "*",
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -155,13 +149,3 @@ SPECTACULAR_SETTINGS = {
     'TITLE': 'Django DRF Task Manager',
     # OTHER SETTINGS
 }
-
-# settings.py
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
