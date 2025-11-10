@@ -29,7 +29,7 @@ ALLOWED_HOSTS = [
     'taskvia.online',
     'www.taskvia.online',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
     "*",
 ]
 
