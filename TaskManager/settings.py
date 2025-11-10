@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-_sdlgc_h%#_gyp7e7od9y8a880&b4n&53_4&*b5*u2kg3%uhzg
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
-    "98.130.44.165",
-    "ec2-98-130-44-165.ap-south-2.compute.amazonaws.com",
+    'taskvia.online',
+    'www.taskvia.online',
+    'localhost',
+    '127.0.0.1'
     "*",
 ]
 
