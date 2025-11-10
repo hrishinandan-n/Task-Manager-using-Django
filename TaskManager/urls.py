@@ -11,7 +11,7 @@ urlpatterns = [
     path('users/', include('users.urls')),  # User authentication and registration
 
     # API routes
-    path('', include('api.urls')),  # Versioned API endpoints
+    path('api/v1', include('api.urls')),  # Versioned API endpoints
 
     # API Schema & Interactive Docs
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),  # Generates OpenAPI schema (YAML/JSON)
