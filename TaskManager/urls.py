@@ -15,5 +15,5 @@ urlpatterns = [
 
     # API Schema & Interactive Docs
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),  # Generates OpenAPI schema (YAML/JSON)
-    path('api/schema/docs/', SpectacularSwaggerView.as_view(url_name='schema')),  # Swagger UI
+    path('', SpectacularSwaggerView.as_view(url_name='schema')),  # Swagger UI
 ]
